@@ -5,8 +5,11 @@ import java.util.Scanner;
 public class Teste {
 	
 	public static void main(String[] args) {
-		char letraAtualPalavra;
-		String palavra = "ESCOLA";
+		Tela tela = new Tela();
+		VerificacaoPalpite verificacao = new VerificacaoPalpite();
+		
+		char letraAtualPalavra = 0;
+		String palavra = "DICIONARIO";
 		System.out.println();
 		int quantLetrasPalavra = palavra.length();
 		int quantLetrasAcertadas = 0;
@@ -18,17 +21,13 @@ public class Teste {
 		while (quantLetrasAcertadas <= quantLetrasPalavra) {
 			
 			// imprime na tela as letras advinhadas da palavra
-			for (int i = 0; i < quantLetrasPalavra ; i++) {
-				letraAtualPalavra = palavra.charAt(i);
-				if (letrasAcertadas[i] == letraAtualPalavra){
-					System.out.print(letraAtualPalavra);
-				} else {
-					System.out.print("_");
-				}
-			}	
+			tela.imprimePalavra(quantLetrasPalavra, letraAtualPalavra, 
+					palavra, letrasAcertadas);
+			
+			
 
 			System.out.println();
-			if (quantLetrasAcertadas == quantLetrasPalavra) {
+			if (verificacao.getQuantLetrasAcertadas() == quantLetrasPalavra) {
 				System.out.println("Jogo acabou");
 				break;
 			}
@@ -36,16 +35,13 @@ public class Teste {
 			System.out.println("Digite uma letra: ");
 			String letraPalpite = scan.next();
 			
-			// Verifica se o palpite da letra está correto			
-			for (int i = 0; i < quantLetrasPalavra ; i++) {
-				letraAtualPalavra = palavra.charAt(i);
-				if ((letraPalpite.charAt(0) == letraAtualPalavra)
-						&& (letraPalpite.charAt(0) 
-						!= (letrasAcertadas[i]))) {
-					letrasAcertadas[i] = letraAtualPalavra;
-					quantLetrasAcertadas++;
-				} 
-			}	
+			// Verifica se o palpite da letra está correto
+			verificacao.verificaPalpite (quantLetrasPalavra, 
+					letraAtualPalavra, palavra, letraPalpite,
+					letrasAcertadas, quantLetrasAcertadas);
+			
+			
+
 		}
 	}
 }
