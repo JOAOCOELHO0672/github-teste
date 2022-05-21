@@ -36,9 +36,8 @@ public class Teste {
 			String letraPalpite = scan.next();
 			
 			// Verifica se o palpite da letra está correto
-			verificacao.verificaPalpite (quantLetrasPalavra, 
-					letraAtualPalavra, palavra, letraPalpite,
-					letrasAcertadas, quantLetrasAcertadas);
+			verificacao.verificaPalpite (quantLetrasPalavra, palavra, letraPalpite,
+					letrasAcertadas);
 			
 			
 
