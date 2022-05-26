@@ -14,6 +14,7 @@ public class Teste {
 		int quantLetrasPalavra = palavra.length();
 		int quantLetrasAcertadas = 0;
 		char[] letrasAcertadas = new char[quantLetrasPalavra];
+		String letraPalpite;
 		
 		Scanner scan = new Scanner(System.in);
 
@@ -33,11 +34,11 @@ public class Teste {
 			}
 				
 			System.out.println("Digite uma letra: ");
-			String letraPalpite = scan.next();
+			letraPalpite = scan.next();
 			
 			// Verifica se o palpite da letra está correto
-			verificacao.verificaPalpite (quantLetrasPalavra, palavra, letraPalpite,
-					letrasAcertadas);
+			verificacao.verificaPalpite (quantLetrasPalavra, palavra,
+					letraPalpite, letrasAcertadas);
 			
 			
 

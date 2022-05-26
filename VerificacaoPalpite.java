@@ -25,8 +25,8 @@ public class VerificacaoPalpite {
 	}
 
 
-	public VerificacaoPalpite verificaPalpite(int quantLetrasPalavra, String palavra, String letraPalpite,
-			char letrasAcertadas[]) {
+	public VerificacaoPalpite verificaPalpite(int quantLetrasPalavra,
+			String palavra, String letraPalpite, char letrasAcertadas[]) {
 		VerificacaoPalpite retornoDados = new VerificacaoPalpite();
 		char letraAtualPalavra;		
 		for (int i = 0; i < quantLetrasPalavra ; i++) {
